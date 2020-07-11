@@ -1,0 +1,48 @@
+@import "../../scss/helpers";
+
+.checkbox {
+  user-select: none;
+  position: relative;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  &__input:checked ~ &__label &__checkmark {
+    background-color: $black;
+  }
+
+  &__label {
+    font-size: $font-size-xs;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: rem(10px) 0;
+    margin-bottom: rem(10px);
+  }
+
+  &__input:not(:checked) ~ &__label:hover &__checkmark,
+  &__input:not(:checked) ~ &__label:focus &__checkmark {
+    background-color: $light-gray;
+  }
+
+  &__checkmark {
+    margin-right: rem(10px);
+    width: rem(15px);
+    display: inline-block;
+    height: rem(15px);
+    border: 2px solid $white;
+    box-shadow: 0 0 0 1px $light-gray;
+    transition: $transition-base;
+  }
+
+  &__error {
+    color: $error-color;
+    position: absolute;
+    bottom: rem(-8px, $font-size-xs);
+    font-size: $font-size-xs;
+  }
+}

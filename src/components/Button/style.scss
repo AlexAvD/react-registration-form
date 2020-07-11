@@ -1,0 +1,43 @@
+@import "../../scss/helpers";
+
+.button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  transition: $transition-base;
+  font-size: $font-size-lg;
+  background-color: transparent;
+
+  &_solid {
+    background-color: $light-gray;
+    color: $white;
+    text-transform: uppercase;
+    padding: rem(12px) rem(30px);
+
+    &:hover {
+      background-color: $black;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &_wide {
+    width: 100%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &_icon {
+    background-color: transparent;
+    color: $black;
+  }
+
+  &_disabled {
+    color: $light-gray;
+  }
+}

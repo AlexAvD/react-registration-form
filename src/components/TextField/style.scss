@@ -1,0 +1,69 @@
+@import "../../scss/functions";
+@import "../../scss/variables";
+
+$label-color: $gray;
+$error-font-size: $font-size-xs;
+$input-line-color: $light-gray;
+$input-line-focus-color: $black;
+
+.text-field {
+  position: relative;
+  text-align: left;
+  user-select: none;
+
+  &_error &__input {
+    background: linear-gradient(0deg, $error-color 1px, transparent 1px),
+      linear-gradient(0deg, $error-color 1px, transparent 1px);
+    color: $error-color;
+  }
+
+  &__input {
+    display: block;
+    margin-bottom: rem(20px);
+    padding: rem(16px) 0 rem(10px) 0;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    background: linear-gradient(
+        0deg,
+        $input-line-focus-color 1px,
+        transparent 1px
+      ),
+      linear-gradient(0deg, $input-line-color 1px, transparent 1px);
+    background-repeat: no-repeat;
+    background-size: 0% 100%, 100%;
+    transition: $transition-base;
+    font: inherit;
+
+    &:focus {
+      outline: 0;
+      background-size: 100% 100%, 100%;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &__input:focus + &__label,
+  &__input:not(:placeholder-shown) + &__label {
+    transform: translate(0, rem(-19px)) scale(0.8);
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: rem(10px);
+    color: $label-color;
+    transition: $transition-base ease;
+    pointer-events: none;
+    transform-origin: 0 0;
+  }
+
+  &__error {
+    color: $error-color;
+    position: absolute;
+    bottom: rem(-14px);
+    font-size: $error-font-size;
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../scss/helpers";
+
+.form {
+  max-width: 375px;
+  margin: 0 auto;
+  &__header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-size: $font-size-xxl;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    font-size: $font-size-md;
+  }
+
+  &__footer {
+    margin-top: rem(30px);
+    font-size: $font-size-lg;
+    color: $gray;
+    text-align: center;
+  }
+}

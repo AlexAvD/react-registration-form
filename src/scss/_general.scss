@@ -1,0 +1,25 @@
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $black;
+}
+
+.container {
+  padding: 0 15px;
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.mr-1 {
+  margin-right: rem(10px);
+}
+
+.link {
+  text-decoration: none;
+  color: $black;
+  font-weight: 600;
+}
